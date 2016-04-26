@@ -1,0 +1,3 @@
+grammar Rtype;
+
+file: 'Rtype' ;

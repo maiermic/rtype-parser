@@ -1,0 +1,29 @@
+{
+  "name": "rtype-parser",
+  "version": "1.0.0",
+  "description": "Parser and editor for Rtype type definitions.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:grammar",
+    "build:grammar": "antlr4 -Dlanguage=JavaScript Rtype.g4 -o parser",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maiermic/rtype-parser.git"
+  },
+  "keywords": [
+    "rtype",
+    "type",
+    "types",
+    "javascript",
+    "parser",
+    "editor"
+  ],
+  "author": "Michael Maier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maiermic/rtype-parser/issues"
+  },
+  "homepage": "https://github.com/maiermic/rtype-parser#readme"
+}
