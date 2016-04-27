@@ -8,3 +8,5 @@ and the ANTLR4 generated parser to provide error annotations (see **my-worker.js
 [ANTLR4]: http://www.antlr.org/
 [ACE editor]: https://ace.c9.io/
 [antlr4-ace-ext]: https://github.com/maiermic/antlr4-ace-ext
+
+[![Join the chat at https://gitter.im/maiermic/rtype-parser](https://badges.gitter.im/maiermic/rtype-parser.svg)](https://gitter.im/maiermic/rtype-parser?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
