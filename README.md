@@ -11,3 +11,5 @@ This project is in early stage. If you like to join the discussion
 [ANTLR4]: http://www.antlr.org/
 [ACE editor]: https://ace.c9.io/
 [antlr4-ace-ext]: https://github.com/maiermic/antlr4-ace-ext
+
+[![Join the chat at https://gitter.im/maiermic/rtype-parser](https://badges.gitter.im/maiermic/rtype-parser.svg)](https://gitter.im/maiermic/rtype-parser?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
