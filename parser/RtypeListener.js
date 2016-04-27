@@ -20,6 +20,15 @@ RtypeListener.prototype.exitFile = function(ctx) {
 };
 
 
+// Enter a parse tree produced by RtypeParser#typeDeclaration.
+RtypeListener.prototype.enterTypeDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by RtypeParser#typeDeclaration.
+RtypeListener.prototype.exitTypeDeclaration = function(ctx) {
+};
+
+
 // Enter a parse tree produced by RtypeParser#minimalInterface.
 RtypeListener.prototype.enterMinimalInterface = function(ctx) {
 };

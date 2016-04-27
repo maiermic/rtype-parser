@@ -1,6 +1,10 @@
 grammar Rtype;
 
 file
+    : typeDeclaration EOF
+    ;
+
+typeDeclaration
     : minimalInterface
     | nonMinimalInterface
     | functionInterface
