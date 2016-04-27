@@ -1,7 +1,12 @@
 module.exports = {
   literals: {
-    'storage.type': ['Rtype']
+    'paren.lparen': ['(', '{', '['],
+    'paren.rparen': [')', '}', ']'],
+    'punctuation.operator': [',', ';'],
+    'keyword.operator': ['=>']
   },
   symbols: {
+    'storage.type': 'BuiltinType',
+    'identifier': 'Identifier'
   }
 };
