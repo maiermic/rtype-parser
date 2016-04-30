@@ -30,9 +30,14 @@ function createTests(directory, createTest) {
   return fs.readdirSync(directory)
     .reduce((tests, filename) => {
       let file = `${directory}/${filename}`;
-      let fileContent = fs.readFileSync(file, 'utf-8');
-      let testName = path.basename(filename, path.extname(filename));
-      tests[testName] = createTest(fileContent);
+      let stat = fs.statSync(file);
+      if (stat && stat.isDirectory()) {
+        tests[filename] = createTests(file, createTest);
+      } else {
+        let fileContent = fs.readFileSync(file, 'utf-8');
+        let testName = path.basename(filename, path.extname(filename));
+        tests[testName] = createTest(fileContent);
+      }
       return tests;
     }, {});
 }
