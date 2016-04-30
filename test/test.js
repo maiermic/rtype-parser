@@ -1,3 +1,7 @@
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
 const antlr4 = require('antlr4');
 const assert = require('chai').assert;
 const SyntaxErrorListener = require('./SyntaxErrorListener');
@@ -22,11 +26,24 @@ function isSyntacticallyCorrect(input) {
   return listener.isSyntacticallyCorrect;
 }
 
+function createTests(directory, createTest) {
+  return fs.readdirSync(directory)
+    .reduce((tests, filename) => {
+      let file = `${directory}/${filename}`;
+      let fileContent = fs.readFileSync(file, 'utf-8');
+      let testName = path.basename(filename, path.extname(filename));
+      tests[testName] = createTest(fileContent);
+      return tests;
+    }, {});
+}
+
 module.exports = {
-  'syntactically correct': function () {
-    assert.isTrue(isSyntacticallyCorrect('(Number) => Number'));
-  },
-  'syntax error': function () {
-    assert.isFalse(isSyntacticallyCorrect('(Number => Number'));
-  }
+  'syntactically correct': createTests(
+    './test/data/syntactically-correct',
+    fileContent => () => assert.isTrue(isSyntacticallyCorrect(fileContent))
+  ),
+  'syntax error': createTests(
+    './test/data/syntax-error',
+    fileContent => () => assert.isFalse(isSyntacticallyCorrect(fileContent))
+  )
 };
