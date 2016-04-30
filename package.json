@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build:grammar",
     "build:grammar": "antlr4 -Dlanguage=JavaScript Rtype.g4 -o parser",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/test.js --ui exports"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/maiermic/rtype-parser/issues"
   },
-  "homepage": "https://github.com/maiermic/rtype-parser#readme"
+  "homepage": "https://github.com/maiermic/rtype-parser#readme",
+  "devDependencies": {
+    "antlr4": "file:antlr4",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }
